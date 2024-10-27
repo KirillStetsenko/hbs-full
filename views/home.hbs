@@ -1,0 +1,58 @@
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>Document</title>
+		<link rel='stylesheet' href='css/home.css' />
+	</head>
+	<body>
+
+		<h2>Home</h2>
+
+		<a href='/about'>About</a>
+		<a href='/look'>Lookup</a>
+
+		<hr />
+
+		{{#with object}}
+
+			<b>
+				{{title}}
+			</b>
+
+			<b>{{price}}</b>
+
+			{{colors}}
+
+		{{/with}}
+
+		<hr />
+
+		{{text1}}
+
+		{{{text1}}}
+
+		<hr />
+
+		{{text2}}
+
+		<br />
+
+		{{{text2}}}
+
+		<br />
+
+		<p>{{getSum 9}}</p>
+		<p>{{getSum 2 4}}</p>
+		<p>{{getSum 'text' 'fff'}}</p>
+
+		<hr />
+
+		{{#list array}}
+
+			{{fruit}}
+
+		{{/list}}
+
+	</body>
+</html>

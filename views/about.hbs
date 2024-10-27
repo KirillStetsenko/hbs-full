@@ -1,0 +1,82 @@
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>Document</title>
+	<link rel='stylesheet' href='css/about.css' />
+	</head>
+	<body>
+<h2>About</h2>
+<a href='/'>Back to home</a>
+
+<p> Name: {{name}} </p>
+<p> isVisible: {{isVisible}} </p>
+<p> Array: {{array}}</p>
+<p>Object: {{object}}</p>
+
+<hr />
+
+{{#each array}}
+	{{this}}
+{{/each}}
+
+<br>
+
+{{#each array}}
+	{{.}}
+{{/each}}
+
+<br>
+
+<p>
+	{{#each array as |name id|}}
+		<i>
+			{{ id }}: {{ name }}
+		</i>
+	{{/each}}
+</p>
+
+<ul>
+	{{#each array}}
+	<li>{{.}}</li>
+	{{/each}}
+</ul>
+
+<ol>
+	{{#each array}}
+	<li>{{.}}</li>
+	{{/each}}
+</ol>
+
+<hr />
+
+{{#each object}}
+	{{.}}
+{{/each}}
+
+<br>
+
+<p>Title: <b>{{object.title}}</b></p>
+
+<p>Price: <b>{{object.price}}</b></p>
+
+<p>Colors:</p>
+<ul>
+  {{#each object.colors}}
+    <li>{{.}}</li>
+  {{/each}}
+</ul>
+
+<hr />
+
+{{#if isVisible}}
+	<p>
+		IsVisible: <b>{{isVisible}}</b> and you can see this text!
+	</p>
+{{else}}
+	<p>
+		IsVisible: <b>{{isVisible}}</b> that's why you can see this text!
+	</p>
+{{/if}}
+	</body>
+</html>
